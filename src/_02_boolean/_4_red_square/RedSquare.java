@@ -24,7 +24,9 @@ public class RedSquare {
 		if(isRed && isSquare) {
 			drawRedSquare();
 		}
-		else {
+		else  if(!isRed && isSquare ) {
+			drawBlueSquare();
+		}else{
             JOptionPane.showMessageDialog(null, "No shape was drawn!");
         }
 		
@@ -32,7 +34,7 @@ public class RedSquare {
 		
 		// 2. Initialize isRed to true instead of false and run the program 
 		//    again.
-		
+		isRed = true;
 		// 3. Write an else if statement after the if statement that calls 
 		//    drawBlueSquare if isRed is false AND isSquare is true. 
 		//    Hint: Use ! and &&.
