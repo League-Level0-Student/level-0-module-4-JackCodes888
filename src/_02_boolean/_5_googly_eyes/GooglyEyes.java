@@ -9,12 +9,17 @@ import processing.core.PImage;
  * Instructions:
  * 1. Find an image on the Internet and drop it into the /images folder at the
  *    top level of this module. It can be anything as long as it has large eyes!
- * 
+ * 	
  * 2. Declare a variable for the image:
  *    PImage face;
- * 
- * 3. In your setup() method, import your image using the following code:
- *    face = loadImage("face.jpg");
+ */   
+ 
+
+
+
+	PImage face
+ /* 3. In your setup() method, import your image using the following code:
+ *    face = loadImage("face.jpg");/*
  * 
  * 4. Resize your face image to the size of the window using the resize() method.
  * 

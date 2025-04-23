@@ -5,7 +5,7 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 
 import org.jointheleague.graphical.robot.Robot;
-
+import javax.swing.JOptionPane;
 public class RedSquare {
 	
 	static boolean drewRedSquare = false;
@@ -15,18 +15,27 @@ public class RedSquare {
 	
 	public static void main(String[] args) {
 		
-		boolean isRed = false;
+		boolean isRed = true;
 		boolean isSquare = true;
-		
+		System.out.println("Teest");
 		// The && shown here means that both booleans must be true for the 
 		// entire if statement to be true. It is referred to as the "and"
 		// operator. 
 		if(isRed && isSquare) {
+			System.out.print("Drwing red square");
 			drawRedSquare();
 		}
-		else  if(!isRed && isSquare ) {
+		else if(!isRed && isSquare ) {
 			drawBlueSquare();
-		}else{
+			System.out.print("Drawing blue sqaure");
+		}else if(isRed&&!isSquare)  {
+		
+		drawRedTriangle();
+		System.out.print("drawing red square");
+	}else if(!isRed&&!isSquare) {
+		drawBlueTriangle();
+		System.out.print("Drawing blue triangle");
+	}else{
             JOptionPane.showMessageDialog(null, "No shape was drawn!");
         }
 		
@@ -34,7 +43,7 @@ public class RedSquare {
 		
 		// 2. Initialize isRed to true instead of false and run the program 
 		//    again.
-		isRed = true;
+		
 		// 3. Write an else if statement after the if statement that calls 
 		//    drawBlueSquare if isRed is false AND isSquare is true. 
 		//    Hint: Use ! and &&.
@@ -70,39 +79,42 @@ public class RedSquare {
 	}
 	
 	static void drawRedSquare() {
-		Robot rob = new Robot();
-		rob.penDown();
-		rob.setSpeed(100);
-		rob.setPenColor(Color.red);
+		
+		Robot r = new Robot();
+		r.penDown();
+		r.setSpeed(100);
+		r.setPenColor(255,0,0);
 		for (int i = 0; i < 4; i++) {
-			rob.turn(90);
-			rob.move(100);
+			r.turn(90);
+			r.move(100);
 		}
 		
 		drewRedSquare = true;
 	}	
 	
 	static void drawBlueSquare() {
-		Robot rob = new Robot();
-		rob.penDown();
-		rob.setSpeed(100);
-		rob.setPenColor(Color.blue);
+		
+		Robot rb = new Robot();
+		rb.penDown();
+		rb.setSpeed(100);
+		rb.setPenColor(0,0,255);
 		for (int i = 0; i < 4; i++) {
-			rob.turn(90);
-			rob.move(100);
+			rb.turn(90);
+			rb.move(100);
 		}
 		
 		drewBlueSquare = true;
 	}
 	
 	static void drawRedTriangle() {
-		Robot rob = new Robot();
-		rob.penDown();
-		rob.setSpeed(100);
-		rob.setPenColor(Color.red);
+		
+		Robot ro = new Robot();
+		ro.penDown();
+		ro.setSpeed(100);
+		ro.setPenColor(255,0,0);
 		for (int i = 0; i < 3; i++) {
-			rob.turn(120);
-			rob.move(100);
+			ro.turn(120);
+			ro.move(100);
 		}
 		
 		drewRedTriangle = true;
@@ -110,13 +122,14 @@ public class RedSquare {
 	
 	static void drawBlueTriangle() {
 		
-		Robot rob = new Robot();
-		rob.penDown();
-		rob.setSpeed(100);
-		rob.setPenColor(Color.blue);
+		
+		Robot ob = new Robot();
+		ob.penDown();
+		ob.setSpeed(100);
+		ob.setPenColor(0,0,255);
 		for (int i = 0; i < 3; i++) {
-			rob.turn(120);
-			rob.move(100);
+			ob.turn(120);
+			ob.move(100);
 		}
 		
 		drewBlueTriangle = true;

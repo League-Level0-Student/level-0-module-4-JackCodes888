@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class GameOver {
 	
 	public static void main(String[] args) {
-
+		
 		boolean gameOver = false;
 		while(!gameOver) {
 		// 1. Ask the user if the game is over and save their answer.
