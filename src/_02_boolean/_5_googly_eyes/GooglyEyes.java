@@ -4,7 +4,19 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /*
- * Goal: Put googly eyes on a face!
+ * Goal: Put googly eyes on a face!*/
+
+
+
+
+
+
+
+
+
+
+
+/* 
  * 
  * Instructions:
  * 1. Find an image on the Internet and drop it into the /images folder at the
@@ -17,7 +29,7 @@ import processing.core.PImage;
 
 
 
-	PImage face
+	
  /* 3. In your setup() method, import your image using the following code:
  *    face = loadImage("face.jpg");/*
  * 
@@ -54,15 +66,37 @@ public class GooglyEyes extends PApplet {
     
     @Override
     public void setup() {
-
+    face = loadImage("03spongebob_xp-articleLarge.jpg");
+    face.resize(WIDTH,HEIGHT);
     }
 
     @Override
     public void draw() {
-
+    background(face);
+    System.out.println(mouseY);
+    System.out.println(mouseX);
+    fill(255,255,255);
+    ellipse(567,282,50,100);
+    ellipse(528,282,50,100);
+    fill(0,0,0);
+    if(mouseX > 400 && mouseY <400) {
+    	ellipse(575,270,5,5);
+    	ellipse(545,270,5,5);
+    }else if(mouseX > 400 && mouseY > 400) {
+    	
+    	ellipse(575,311,5,5);
+    	ellipse(545,310,5,5);
+    }else if(mouseX < 400 && mouseY > 400) {
+    	ellipse(555,311,5,5);
+    	ellipse(525,310,5,5);
+    }else if(mouseX< 400&& mouseY<400) {
+    	ellipse(555,270,5,5);
+    	ellipse(525,270,5,5);
+    }
     }
 
     static public void main(String[] args) {
         PApplet.main(GooglyEyes.class.getName());
+        
     }
 }

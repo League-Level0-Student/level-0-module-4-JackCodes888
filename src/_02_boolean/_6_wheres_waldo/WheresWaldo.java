@@ -25,6 +25,8 @@ import processing.core.PImage;
  *   4. Resize your image to the size of the window using the resize() method.
  * 
  *   5. Set your Waldo image as the window's background.
+ * X: 228 Y: 236
+ * X: 262 Y: 323
  * 
  * In the draw() method:
  *   6. Find the range of X and Y coordinates of Waldo in the image. You can
@@ -50,12 +52,20 @@ public class WheresWaldo extends PApplet {
 
     @Override
     public void setup() {
+        waldo = loadImage("whersWaldo.jpeg");
         
+        waldo.resize(WIDTH,HEIGHT);
     }
 
     @Override
     public void draw() {
-        
+    	background(waldo);
+    	println("X: " + mouseX + " Y: " + mouseY);
+    	if(mousePressed&&mouseX < 262 && mouseX > 228&&mouseY >236&&mouseY<323) {
+    		playWhoohoo();
+    	}else if(mousePressed){
+    		playDoh();
+    	}
     }
 
     static public void main(String[] args) {
